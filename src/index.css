@@ -1,0 +1,45 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* html 레벨 스크롤 차단 */
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* body 레벨 스크롤 차단 */
+  font-family: -apple-system, BlinkMacSystemFont, 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+  background: #F4F6F8;
+  color: #111;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+button { font-family: inherit; cursor: pointer; }
+button:not(:disabled) { transition: filter 0.15s ease, opacity 0.15s ease; }
+button:not(:disabled):hover { filter: brightness(0.93); }
+button:not(:disabled):active { filter: brightness(0.87); }
+input  { font-family: inherit; outline: none; }
+input:focus { border-color: #3182F6 !important; }
+
+/* 스크롤바 스타일 - 내부 스크롤 영역에만 적용 */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #E0E0E0; border-radius: 4px; }
+
+/* Mandate 목록 카드 호버 효과 */
+.mandate-card {
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.mandate-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
